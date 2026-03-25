@@ -17,9 +17,6 @@
         .page-container {
             margin-top: 20px;
             margin-left: 20px;
-            /* 适配手机：添加最大宽度和盒模型 */
-            box-sizing: border-box;
-            max-width: calc(100% - 20px);
         }
 
         /* 打印按钮样式：灰色，仅包含“打印”二字 */
@@ -55,13 +52,11 @@
 
         .certificate-img {
             display: block;
-            /* 核心修复：手机自动满屏，不超出宽度 */
-            width: 100%;
-            max-width: 1000px;
+            width: 1000px; /* 固定宽度 */
+            max-width: 100%;
             height: auto;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         /* 打印样式定义 */
@@ -97,11 +92,14 @@
 </head>
 <body>
 
+    <!-- 整体容器，包含按钮和图片 -->
     <div class="page-container">
+        <!-- 顶部工具栏：灰色打印按钮 -->
         <div class="toolbar">
             <button class="print-btn" onclick="window.print(); return false;">打印</button>
         </div>
 
+        <!-- 证书展示区 -->
         <div class="certificate-container">
             <img src="certificate_original.png" alt="证书" class="certificate-img">
         </div>
