@@ -55,9 +55,9 @@
 
         .certificate-img {
             display: block;
-            /* 适配手机：将固定宽度改为最大宽度，保持宽高比 */
-            max-width: 100%;
-            width: 1000px; /* 桌面端仍保持原宽度 */
+            /* 核心修复：手机自动满屏，不超出宽度 */
+            width: 100%;
+            max-width: 1000px;
             height: auto;
             margin: 0;
             padding: 0;
@@ -97,14 +97,11 @@
 </head>
 <body>
 
-    <!-- 整体容器，包含按钮和图片 -->
     <div class="page-container">
-        <!-- 顶部工具栏：灰色打印按钮 -->
         <div class="toolbar">
             <button class="print-btn" onclick="window.print(); return false;">打印</button>
         </div>
 
-        <!-- 证书展示区 -->
         <div class="certificate-container">
             <img src="certificate_original.png" alt="证书" class="certificate-img">
         </div>
