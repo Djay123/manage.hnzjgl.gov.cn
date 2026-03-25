@@ -17,6 +17,9 @@
         .page-container {
             margin-top: 20px;
             margin-left: 20px;
+            /* 适配手机：添加最大宽度和盒模型 */
+            box-sizing: border-box;
+            max-width: calc(100% - 20px);
         }
 
         /* 打印按钮样式：灰色，仅包含“打印”二字 */
@@ -52,10 +55,13 @@
 
         .certificate-img {
             display: block;
-            width: 1000px; /* 固定宽度 */
+            /* 适配手机：将固定宽度改为最大宽度，保持宽高比 */
+            max-width: 100%;
+            width: 1000px; /* 桌面端仍保持原宽度 */
             height: auto;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         /* 打印样式定义 */
