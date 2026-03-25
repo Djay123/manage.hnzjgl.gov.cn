@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>河南省专业技术人员继续教育证书打印</title>
+    <style>
+        /* 基础页面样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            font-family: "Microsoft YaHei", "SimSun", sans-serif;
+        }
+
+        /* 整体容器，向右下挪动 20px */
+        .page-container {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        /* 打印按钮样式：灰色，仅包含“打印”二字 */
+        .toolbar {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .print-btn {
+            padding: 5px 15px;
+            background-color: #e0e0e0; /* 灰色背景 */
+            color: #333; /* 深灰色文字 */
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .print-btn:hover {
+            background-color: #d0d0d0;
+            border-color: #bbb;
+        }
+
+        /* 证书图片容器 */
+        .certificate-container {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .certificate-img {
+            display: block;
+            width: 1000px; /* 固定宽度 */
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 打印样式定义 */
+        @media print {
+            /* 打印时隐藏按钮 */
+            .toolbar {
+                display: none !important;
+            }
+
+            /* 打印时移除整体偏移，确保证书对齐纸张边缘 */
+            .page-container {
+                margin: 0;
+                padding: 0;
+            }
+
+            @page {
+                margin: 0;
+                size: auto;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .certificate-img {
+                width: 100%; /* 打印时自适应 */
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 整体容器，包含按钮和图片 -->
+    <div class="page-container">
+        <!-- 顶部工具栏：灰色打印按钮 -->
+        <div class="toolbar">
+            <button class="print-btn" onclick="window.print(); return false;">打印</button>
+        </div>
+
+        <!-- 证书展示区 -->
+        <div class="certificate-container">
+            <img src="certificate_original.png" alt="证书" class="certificate-img">
+        </div>
+    </div>
+
+</body>
+</html>
